@@ -1,12 +1,12 @@
 #include "stdafx.h"
 #include "Convert.h"
-
-bool Convert::is_base64(const char c)
+using namespace cao_api;
+bool CConvert::is_base64(const char c)
 {
 	return (isalnum(c) || (c == '+') || (c == '/'));
 }
 
-std::string Convert::base64_encode(const char * bytes_to_encode, unsigned int in_len)
+std::string CConvert::base64_encode(const char * bytes_to_encode, unsigned int in_len)
 {
 	std::string ret;
 	int i = 0;
@@ -59,7 +59,7 @@ std::string Convert::base64_encode(const char * bytes_to_encode, unsigned int in
 	return ret;
 }
 
-std::string Convert::base64_decode(std::string const & encoded_string)
+std::string CConvert::base64_decode(std::string const & encoded_string)
 {
 	int in_len = (int)encoded_string.size();
 	int i = 0;
